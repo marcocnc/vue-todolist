@@ -29,7 +29,10 @@
 
         <div class="container">
             <ul class="todolist">
-                <li></li>
+                <li v-for="task in todoElements">
+                    <span>{{task.element}}</span>
+                    <span class="delete">x</span>
+                </li>
             </ul>
         </div>
     </div>

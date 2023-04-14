@@ -3,27 +3,29 @@ const { createApp } = Vue
 createApp({
 
     data(){
-        todoElements: [
-            {
-                task: 'Andare in palestra',
-                isDone: true
-            },
-
-            {
-                task: 'Finire gli esercizi',
-                isDone: true
-            },
-
-            {
-                task: 'Giocare a tennis', 
-                isDone: true
-            },
-
-            {
-                task: 'Portare la macchina dal meccanico',
-                isDone: true
-            },
-        ]
+        return{
+            todoElements: [
+                {
+                    element: 'Andare in palestra',
+                    isDone: true
+                },
+    
+                {
+                    element: 'Finire gli esercizi',
+                    isDone: true
+                },
+    
+                {
+                    element: 'Giocare a tennis', 
+                    isDone: true
+                },
+    
+                {
+                    element: 'Portare la macchina dal meccanico',
+                    isDone: true
+                },
+            ]
+        }
     },
 
 

@@ -57,7 +57,11 @@ body{
     background-color: #fff;
 }
 
-.todolist li i:hover{
+.todolist .delete{
+    font-weight: bold;
+}
+
+.todolist .delete:hover{
     color: red;
 }
 
