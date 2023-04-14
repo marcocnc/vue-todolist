@@ -20,11 +20,17 @@
     <div id="app">
         <div class="logo">
             <img src="assets/img/logo.png" alt="logo">
+            <h1>TO DO LIST</h1>
         </div>
         
         <div class="inputs">
-            <input type="text" placeholder="Aggiungi una nuova task">
-            <button>Aggiungi</button>
+            <input v-model="newTodo" type = "text" 
+            @keyup.enter="addNewTask()"
+            placeholder = "Aggiungi una nuova task">
+            <button @click="addNewTask()">Aggiungi</button>
+            <div class="warnMessage">
+                <span>{{warnMsg}}</span>
+            </div>
         </div>
 
         <div class="container">
@@ -36,9 +42,14 @@
 
                     <span>{{task.element}}</span>
                     
-                    <i @click="deleteTask(index)" class="fa-solid fa-trash"></i>
+                    <i
+                      @click.stop = "deleteTask(index)"
+                      
+                      class="fa-solid fa-trash">
+                    </i>
                 </li>
             </ul>
+            <h2 v-if="todoElements.length === 0">Non ci sono task :)</h2>
         </div>
     </div>
 

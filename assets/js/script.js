@@ -7,12 +7,12 @@ createApp({
             todoElements: [
                 {
                     element: 'Andare in palestra',
-                    isDone: true
+                    isDone: false
                 },
     
                 {
                     element: 'Finire gli esercizi',
-                    isDone: true
+                    isDone: false
                 },
     
                 {
@@ -22,18 +22,50 @@ createApp({
     
                 {
                     element: 'Portare la macchina dal meccanico',
-                    isDone: true
+                    isDone: false
                 },
-            ]
+            ],
+            warnMsg : '',
+            newTodo : '',
+            noTaskMsg: ''
         }
     },
 
 
     methods:{
-        deleteTask(element){
+
+        // questa funzione cancella la task intercettando l'indice dell'array todoElements
+        deleteTask(index){
             console.log('Rimosso');
-            this.todoElements.splice(element, 1)
-        }
+            
+            if(this.todoElements[index].isDone == false){
+                this.showWarnText()
+            }else{
+                this.todoElements.splice(index, 1)
+
+            }
+        },
+
+        showWarnText(){
+            this.warnMsg = "Attenzione: non puoi cancellare la task se non l'hai portata a termine"
+        },
+
+        addNewTask(){
+           // si crea un nuovo oggetto
+           const newTask = {
+                element: this.newTodo,
+                isDone: false
+           }
+
+           // pusha il nuovo oggetto nell'array
+           this.todoElements.unshift(newTask);
+
+           // si resetta newTodo
+           this.newTodo = ''
+        },
+
+
+        
     }
 
 }).mount('#app')

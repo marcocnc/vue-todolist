@@ -15,6 +15,8 @@ body{
     border-radius: 10px;
     background-color: #f5f7f7;
     margin-top: 30px;
+    border: 1px solid #000;
+    box-shadow: 0 0 10px #000;
 }
 
 
@@ -43,7 +45,16 @@ body{
 }
 
 .inputs button{
+    border: none;
     cursor: pointer;
+    background-color: blueviolet;
+    color: white;
+}
+
+.warnMessage{
+    color: red;
+    padding-top: 5px;
+    font-weight: bold;
 }
 
 .todolist li{
@@ -58,7 +69,7 @@ body{
 }
 
 .todolist li:hover{
-    background-color: #fff;
+    background-color: rgba(137, 43, 226, 0.557);
 }
 
 .todolist li i:hover{
