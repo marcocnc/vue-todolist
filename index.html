@@ -30,13 +30,13 @@
         <div class="container">
             <ul class="todolist">
                 <li
-                  v-for="task in todoElements"
+                  v-for="(task, index) in todoElements"
                   :class = "{'done' : task.isDone}"
                   @click = "task.isDone = !task.isDone">
 
                     <span>{{task.element}}</span>
                     
-                    <i class="fa-solid fa-trash"></i>
+                    <i @click="deleteTask(index)" class="fa-solid fa-trash"></i>
                 </li>
             </ul>
         </div>

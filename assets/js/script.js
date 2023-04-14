@@ -30,7 +30,10 @@ createApp({
 
 
     methods:{
-
+        deleteTask(element){
+            console.log('Rimosso');
+            this.todoElements.splice(element, 1)
+        }
     }
 
 }).mount('#app')
