@@ -17,7 +17,7 @@ createApp({
     
                 {
                     element: 'Giocare a tennis', 
-                    isDone: true
+                    isDone: false
                 },
     
                 {

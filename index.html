@@ -29,9 +29,14 @@
 
         <div class="container">
             <ul class="todolist">
-                <li v-for="task in todoElements">
+                <li
+                  v-for="task in todoElements"
+                  :class = "{'done' : task.isDone}"
+                  @click = "task.isDone = !task.isDone">
+
                     <span>{{task.element}}</span>
-                    <span class="delete">x</span>
+                    
+                    <i class="fa-solid fa-trash"></i>
                 </li>
             </ul>
         </div>

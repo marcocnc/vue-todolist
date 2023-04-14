@@ -42,6 +42,10 @@ body{
     margin-right: 20px;
 }
 
+.inputs button{
+    cursor: pointer;
+}
+
 .todolist li{
     list-style: none;
     display: flex;
@@ -57,11 +61,7 @@ body{
     background-color: #fff;
 }
 
-.todolist .delete{
-    font-weight: bold;
-}
-
-.todolist .delete:hover{
+.todolist li i:hover{
     color: red;
 }
 
